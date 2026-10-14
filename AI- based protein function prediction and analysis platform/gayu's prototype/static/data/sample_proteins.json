@@ -1,0 +1,50 @@
+[
+  {
+    "id": "hbb",
+    "accession": "P68871",
+    "name": "Human Hemoglobin Subunit Beta (HBB)",
+    "category": "Oxygen Transport (Non-Enzyme, Cytosol)",
+    "description": "Essential tetrameric oxygen carrier in human erythrocytes. Contains proximal and distal histidine residues coordinating the heme iron.",
+    "sequence": "MVHLTPEEKSAVTALWGKVNVDEVGGEALGRLLVVYPWTQRFFESFGDLSTPDAVMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDPENFRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKYH"
+  },
+  {
+    "id": "lysc",
+    "accession": "P00698",
+    "name": "Hen Egg White Lysozyme C (LYSC)",
+    "category": "Hydrolase Enzyme (EC 3.2.1.17, Secreted)",
+    "description": "Innate antibacterial defense enzyme hydrolyzing peptidoglycan 1,4-beta-linkages. Features an N-terminal secretory signal peptide and 4 disulfide bridges.",
+    "sequence": "MRSLLILVLCFLPLAALGKVFGRCELAAAMKRHGLDNYRGYSLGNWVCAAKFESNFNTQATNRNTDGSTDYGILQINSRWWCNDGRTPGSRNLCNIPCSALLSSDITASVNCAKKIVSDGNGMNAWVAWRNRCKGTDVQAWIRGCRL"
+  },
+  {
+    "id": "ins",
+    "accession": "P01308",
+    "name": "Human Insulin Precursor (INS)",
+    "category": "Peptide Hormone (Non-Enzyme, Secretory)",
+    "description": "Major metabolic regulator controlling glucose uptake. Synthesized as preproinsulin, cleaved into A and B chains linked by disulfide bonds.",
+    "sequence": "MALWMRLLPLLALLALWGPDPAAAFVNQHLCGSHLVEALYLVCGERGFFYTPKTRREAEDLQVGQVELGGGPGAGSLQPLALEGSLQKRGIVEQCCTSICSLYQLENYCN"
+  },
+  {
+    "id": "rho",
+    "accession": "P02699",
+    "name": "Bovine Rhodopsin (RHO)",
+    "category": "G-Protein Coupled Receptor (Membrane, 7-TM)",
+    "description": "Canonical 7-transmembrane helical photopigment required for dim-light vision. Covalently binds 11-cis-retinal via a protonated Schiff base at Lys-296.",
+    "sequence": "MNGTEGPNFYVPFSNKTGVVRSPFEAPQYYLAEPWQFSMLAAYMFLLIMLGFPINFLTLYVTVQHKKLRTPLNYILLNLAVADLFMVFGGFTTTLYTSLHGYFVFGPTGCNLEGFFATLGGEIALWSLVVLAIERYVVVCKPMSNFRFGENHAIMGVAFTWVMALACAAPPLVGWSRYIPEGMQCSCGIDYYTPHEETNNESFVIYMFVVHFIIPLIVIFFCYGQLVFTVKEAAAQQQESATTQKAEKEVTRMVIIMVIAFLICWLPYAGVAFYIFTHQGSDFGPIFMTIPAFFAKTSAVYNPVIYIMMNKQFRNCMVTTLCCGKNPLGDDEASTTVSKTETSQVAPA"
+  },
+  {
+    "id": "gfp",
+    "accession": "P42212",
+    "name": "Green Fluorescent Protein (GFP)",
+    "category": "Fluorescent Protein (Non-Enzyme, 11-Stranded Beta-Barrel)",
+    "description": "Bioluminescent energy transfer acceptor from Aequorea victoria. Spontaneously forms an internal 4-(p-hydroxybenzylidene)-5-imidazolinone chromophore.",
+    "sequence": "MSKGEELFTGVVPILVELDGDVNGHKFSVSGEGEGDATYGKLTLKFICTTGKLPVPWPTLVTTFSYGVQCFSRYPDHMKQHDFFKSAMPEGYVQERTIFFKDDGNYKTRAEVKFEGDTLVNRIELKGIDFKEDGNILGHKLEYNYNSHNVYIMADKQKNGIKVNFKIRHNIEDGSVQLADHYQQNTPIGDGPVLLPDNHYLSTQSALSKDPNEKRDHMVLLEFVTAAGITHGMDELYK"
+  },
+  {
+    "id": "cyc1",
+    "accession": "P00044",
+    "name": "Yeast Cytochrome c Iso-1 (CYC1)",
+    "category": "Oxidoreductase / Electron Carrier (Mitochondria)",
+    "description": "Mitochondrial intermembrane space electron carrier between complex III and complex IV in the respiratory chain. Covalently attaches heme via Cys-19 and Cys-22.",
+    "sequence": "MTEFKAGSAKKGATLFKTRCLQCHTVEKGGPHKVGPNLHGIFGRHSGQAEGYSYTDANIKKNVLWDENNMSEYLTNPKKYIPGTKMAFGGLKKEKDRNDLITYLKKACE"
+  }
+]

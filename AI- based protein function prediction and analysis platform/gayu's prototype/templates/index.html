@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-Based Protein Function Prediction & Analysis Platform</title>
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/static/css/style.css">
+
+  <!-- Chart.js for Biological Data Visualizations -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <!-- 3Dmol.js for Interactive 3D Protein Structure Rendering -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/3Dmol/2.0.4/3Dmol-min.js"></script>
+</head>
+<body>
+
+  <!-- NAVIGATION BAR -->
+  <header class="navbar">
+    <div class="navbar-container">
+      <a href="#" class="nav-brand" data-tab="home">
+        <div class="brand-icon">&#129516;</div>
+        <div>
+          <div class="brand-title">ProteinPredict AI</div>
+          <div class="brand-sub">Bioinformatics & ML Analysis Platform</div>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link active" data-tab="home">Home</a></li>
+          <li><a href="#analysis" class="nav-link" data-tab="analysis">Protein Analysis</a></li>
+          <li><a href="#results" class="nav-link" data-tab="results">Results Dashboard</a></li>
+          <li><a href="#docs" class="nav-link" data-tab="docs">Documentation</a></li>
+          <li><a href="#analysis" class="nav-link nav-cta" data-action="start-analysis">Start Analysis</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN VIEW CONTAINER -->
+  <main class="main-content">
+
+    <!-- ============================================== -->
+    <!-- TAB 1: HOME PAGE                               -->
+    <!-- ============================================== -->
+    <section id="home" class="tab-pane active">
+      
+      <!-- HERO -->
+      <div class="hero">
+        <div class="hero-badge-wrap">
+          <span class="hero-badge">Academic Bioinformatics Prototype</span>
+          <span class="hero-badge">UniProtKB REST API</span>
+          <span class="hero-badge">Machine Learning Predictor</span>
+          <span class="hero-badge">3D Structure Viewer</span>
+        </div>
+        <h1 class="hero-title">
+          AI-Based Protein Function Prediction & <span class="highlight">Analysis Platform</span>
+        </h1>
+        <p class="hero-subtitle">
+          An advanced bioinformatic platform to analyze amino acid sequences, compute physical-chemical properties, retrieve curated biological database annotations, identify structural domains, and predict functional classes using machine learning.
+        </p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" data-action="start-analysis">
+            &#9654; Start Protein Analysis
+          </button>
+          <button class="btn btn-secondary" data-action="try-example">
+            &#128161; Try Example Protein
+          </button>
+        </div>
+      </div>
+
+      <!-- FEATURES SECTION -->
+      <div class="section-header">
+        <h2>Core Platform Capabilities</h2>
+        <p>Rigorous distinction between calculated properties, database annotations, and computational predictions.</p>
+      </div>
+
+      <div class="grid-features">
+        <div class="feature-card">
+          <div class="feature-icon-box feature-icon-blue">&#9879;</div>
+          <h3>Physicochemical Profiling</h3>
+          <p>Calculates exact molecular weight, theoretical isoelectric point (pI), net charge at physiological pH 7.0, GRAVY hydropathicity, instability index (Guruprasad 1990), and extinction coefficients.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box feature-icon-teal">&#128269;</div>
+          <h3>UniProtKB Database Integration</h3>
+          <p>Direct integration with the official UniProt REST API. Retrieves curated protein names, reviewed (Swiss-Prot) vs unreviewed status, organism taxonomy, functional descriptions, and Gene Ontology (GO) terms.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box feature-icon-purple">&#9881;</div>
+          <h3>Sequence Alignment & Identity</h3>
+          <p>Dynamic programming pairwise alignment based on the BLOSUM62 matrix. Calculates exact sequence identity %, alignment coverage %, and Karlin-Altschul statistical E-values.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box feature-icon-rose">&#129302;</div>
+          <h3>Machine Learning Function Classifier</h3>
+          <p>Validated Random Forest model trained on 35 sequence-derived physicochemical descriptors. Predicts Enzyme vs Non-Enzyme activity, EC Class propensity (EC 1–7), and subcellular localization compartments.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box feature-icon-amber">&#128396;</div>
+          <h3>Domain & Structural Motifs</h3>
+          <p>Detects putative transmembrane alpha-helices via Kyte-Doolittle hydropathy scanning, secretory signal peptide cleavage sites, and catalogs InterPro / Pfam domain architectures.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box feature-icon-emerald">&#128196;</div>
+          <h3>Downloadable Analysis Reports</h3>
+          <p>Export publication-ready reports in standalone HTML (with print/PDF styling), machine-readable JSON data payloads, or standardized FASTA format with annotated headers.</p>
+        </div>
+      </div>
+
+      <!-- HOW IT WORKS WORKFLOW -->
+      <div class="workflow-section">
+        <div class="section-header" style="margin-bottom: 0;">
+          <h2>How The Platform Works</h2>
+          <p>A multi-tiered bioinformatics pipeline ensuring transparency, scientific reproducibility, and data provenance.</p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-item">
+            <span class="step-num">1</span>
+            <h4>Sequence Submission</h4>
+            <p>Input raw amino acids, FASTA text, or upload a FASTA file. Live validation checks character validity and ambiguous codes.</p>
+          </div>
+          <div class="step-item">
+            <span class="step-num">2</span>
+            <h4>Physicochemical Computation</h4>
+            <p>In silico mathematical engines calculate composition, molecular weight, pI, hydropathy profile, and stability metrics.</p>
+          </div>
+          <div class="step-item">
+            <span class="step-num">3</span>
+            <h4>Database Identification</h4>
+            <p>UniProtKB search retrieves verified homologues with pairwise sequence alignment statistics and Gene Ontology terms.</p>
+          </div>
+          <div class="step-item">
+            <span class="step-num">4</span>
+            <h4>AI Function Prediction</h4>
+            <p>Trained feature classifiers infer enzyme propensity, EC classification, subcellular localization, and membrane topology.</p>
+          </div>
+          <div class="step-item">
+            <span class="step-num">5</span>
+            <h4>Dashboard & Report Export</h4>
+            <p>Interactive Chart.js visualizations, 3D molecular structure inspection, and downloadable publication-grade reports.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUPPORTED DATABASES & SCIENTIFIC LIMITATIONS -->
+      <div class="grid-2-col">
+        <div class="info-card">
+          <h3>&#128451; Supported Biological Databases</h3>
+          <ul class="resource-list">
+            <li>
+              <span class="resource-name">UniProtKB / Swiss-Prot</span>
+              <span class="resource-desc">Curated protein records, GO terms & reviewed status</span>
+            </li>
+            <li>
+              <span class="resource-name">NCBI Entrez / Taxonomy</span>
+              <span class="resource-desc">Organism classification and taxon identifiers</span>
+            </li>
+            <li>
+              <span class="resource-name">InterPro & Pfam</span>
+              <span class="resource-desc">Protein families, functional domains and active sites</span>
+            </li>
+            <li>
+              <span class="resource-name">AlphaFold Structure Database</span>
+              <span class="resource-desc">Deep-learning predicted 3D coordinate models</span>
+            </li>
+            <li>
+              <span class="resource-name">RCSB Protein Data Bank (PDB)</span>
+              <span class="resource-desc">Experimentally resolved X-ray & Cryo-EM structures</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="info-card">
+          <div class="disclaimer-box">
+            <h4>&#9888; Scientific Limitations & Disclosures</h4>
+            <p>To preserve biological accuracy and academic integrity, the platform maintains strict data separation:</p>
+            <ul>
+              <li><strong>Calculated vs Retrieved:</strong> Physical parameters (MW, pI, GRAVY) are calculated directly from sequence chemistry. Biological annotations originate from external databases.</li>
+              <li><strong>Alignment Evidence:</strong> Sequence similarity statistics (identity %, coverage %, E-value) are reported solely when an alignment is executed.</li>
+              <li><strong>Machine Learning Scope:</strong> Computational predictions indicate statistical propensity based on sequence descriptors and require wet-lab experimental confirmation.</li>
+              <li><strong>No Fabricated Data:</strong> Missing or unannotated fields are explicitly reported as "Not annotated" or "Inconclusive".</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ============================================== -->
+    <!-- TAB 2: PROTEIN ANALYSIS PAGE                   -->
+    <!-- ============================================== -->
+    <section id="analysis" class="tab-pane">
+      <div class="analysis-container">
+        
+        <!-- MAIN SEQUENCE INPUT CARD -->
+        <div class="card">
+          <div class="card-header">
+            <h3>&#9998; Submit Protein Sequence for Analysis</h3>
+            <span class="badge badge-blue">Standard 20 Amino Acids</span>
+          </div>
+
+          <div class="card-body">
+            <!-- TABS FOR SEQUENCE VS ACCESSION -->
+            <div class="input-tabs">
+              <button class="input-tab-btn active" id="tab-btn-seq">Raw Sequence / FASTA</button>
+              <button class="input-tab-btn" id="tab-btn-acc">Search by UniProt Accession</button>
+            </div>
+
+            <!-- ACCESSION QUICK LOOKUP (COLLAPSIBLE) -->
+            <div id="accession-lookup-block" style="display: none; margin-bottom: 16px;">
+              <label style="display:block; font-size:12px; font-weight:700; color:#475569; margin-bottom:6px;">
+                UniProtKB Accession Code (e.g., P68871, P00698, P01308):
+              </label>
+              <div style="display: flex; gap: 8px;">
+                <input type="text" id="accession-input" class="seq-textarea" style="height: 42px; padding: 8px 12px;" placeholder="Enter accession (e.g. P68871)...">
+                <button class="btn btn-outline" id="acc-search-btn" style="white-space: nowrap;">Fetch & Analyze</button>
+              </div>
+            </div>
+
+            <!-- SEQUENCE TEXTAREA -->
+            <div class="textarea-wrap" id="seq-textarea-wrap">
+              <textarea 
+                id="sequence-input" 
+                class="seq-textarea" 
+                placeholder="Paste amino acid sequence here in standard single-letter code or FASTA format:&#10;&#10;>sp|P68871|HBB_HUMAN Hemoglobin subunit beta&#10;MVHLTPEEKSAVTALWGKVNVDEVGGEALGRLLVVYPWTQRFFESFGDLSTPDAVMGNPK..."></textarea>
+              <span class="char-counter" id="char-counter">0 AA</span>
+            </div>
+
+            <!-- LIVE VALIDATION BANNER -->
+            <div id="validation-banner" class="validation-banner"></div>
+
+            <!-- FILE DROP ZONE / UPLOAD -->
+            <div id="file-drop-zone" style="border: 2px dashed #cbd5e1; border-radius: 8px; padding: 14px; text-align: center; margin-bottom: 18px; background: #f8fafc; cursor: pointer;">
+              <p style="font-size: 12px; color: #64748b; margin-bottom: 6px;">
+                Drag & drop a FASTA file here, or click to upload (<code>.fasta</code>, <code>.fa</code>, <code>.txt</code>)
+              </p>
+              <input type="file" id="fasta-file-input" accept=".fasta,.fa,.txt" style="font-size: 12px;">
+            </div>
+
+            <!-- ACTION BUTTONS -->
+            <div class="input-actions-bar">
+              <div class="left-actions">
+                <button class="btn btn-outline btn-sm" id="clear-btn">&#10006; Clear Input</button>
+              </div>
+              <button class="btn btn-primary" id="analyze-btn">
+                &#9881; Analyse Protein
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- SIDEBAR: CURATED BENCHMARK EXAMPLES -->
+        <div class="card">
+          <div class="card-header">
+            <h3>&#128161; Curated Reference Examples</h3>
+          </div>
+          <div class="card-body">
+            <p style="font-size: 12px; color: #64748b; margin-bottom: 14px;">
+              Click any verified Swiss-Prot benchmark protein below to load its full sequence and annotations instantly:
+            </p>
+            <div id="samples-container" class="sample-list">
+              <!-- Dynamically populated from /api/samples -->
+              <div style="text-align: center; color: #94a3b8; padding: 20px;">Loading curated samples...</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- TAB 3: RESULTS DASHBOARD                       -->
+    <!-- ============================================== -->
+    <section id="results" class="tab-pane">
+      
+      <!-- TOP ACTION BAR -->
+      <div class="results-header-bar">
+        <div>
+          <h2 class="results-protein-title" id="results-protein-title">Protein Analysis Dashboard</h2>
+          <div id="results-header-badges" style="display:flex; gap:6px; margin-top:6px; flex-wrap:wrap;"></div>
+        </div>
+        <div class="results-actions-group">
+          <button class="btn btn-outline btn-sm" id="download-fasta-btn">&#128196; Download FASTA</button>
+          <button class="btn btn-outline btn-sm" id="download-json-report-btn">&#123; &#125; Export JSON</button>
+          <button class="btn btn-success btn-sm" id="download-html-report-btn">&#128438; Download Analysis Report (HTML/PDF)</button>
+        </div>
+      </div>
+
+      <!-- METRIC CARDS ROW -->
+      <div class="stats-cards-row" style="margin-bottom: 24px;">
+        <div class="metric-card">
+          <div class="metric-label">Sequence Length</div>
+          <div class="metric-value" id="res-metric-length">-</div>
+          <div class="metric-hint">Amino acid residues</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Molecular Weight</div>
+          <div class="metric-value" id="res-metric-mw">-</div>
+          <div class="metric-hint">Daltons / kiloDaltons</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Theoretical pI</div>
+          <div class="metric-value" id="res-metric-pi">-</div>
+          <div class="metric-hint">Isoelectric point (Lehninger)</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Net Charge (pH 7.0)</div>
+          <div class="metric-value" id="res-metric-charge">-</div>
+          <div class="metric-hint">Physiological net valence</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">GRAVY Score</div>
+          <div class="metric-value" id="res-metric-gravy">-</div>
+          <div class="metric-hint">Kyte-Doolittle Hydropathicity</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Instability Index</div>
+          <div class="metric-value" id="res-metric-stability">-</div>
+          <div class="metric-hint" id="res-metric-stability-desc">-</div>
+        </div>
+      </div>
+
+      <div class="dashboard-grid">
+
+        <!-- SECTION A: BIOLOGICAL IDENTIFICATION & ALIGNMENT -->
+        <div class="card" id="identification-section">
+          <div class="card-header">
+            <h3>&#128269; 1. Biological Identification & Sequence Alignment</h3>
+            <span class="badge badge-source" id="ident-source">UniProtKB</span>
+          </div>
+          <div class="card-body">
+            <div class="grid-2-col" style="margin-bottom: 20px;">
+              <div>
+                <table class="data-table">
+                  <tr><th style="width:35%;">Protein Name</th><td id="ident-protein-name">Loading...</td></tr>
+                  <tr><th>UniProt Accession</th><td id="ident-accession">-</td></tr>
+                  <tr><th>Entry Name</th><td id="ident-entry-name">-</td></tr>
+                  <tr><th>Gene Symbol</th><td id="ident-gene">-</td></tr>
+                  <tr><th>Source Organism</th><td id="ident-organism">-</td></tr>
+                </table>
+              </div>
+              <div>
+                <div style="font-size:12px; font-weight:700; color:#475569; margin-bottom:8px; text-transform:uppercase;">
+                  Pairwise Sequence Alignment Metrics
+                </div>
+                <div class="stats-cards-row" style="grid-template-columns: repeat(3, 1fr); margin-bottom:12px;">
+                  <div class="stat-box">
+                    <div class="stat-label">Sequence Identity</div>
+                    <div class="stat-val" id="aln-identity-val" style="color:#2563eb;">-</div>
+                    <div class="stat-desc" id="aln-identity-sub">-</div>
+                  </div>
+                  <div class="stat-box">
+                    <div class="stat-label">Alignment Coverage</div>
+                    <div class="stat-val" id="aln-coverage-val" style="color:#059669;">-</div>
+                    <div class="stat-desc">Of query length</div>
+                  </div>
+                  <div class="stat-box">
+                    <div class="stat-label">Karlin-Altschul E-Value</div>
+                    <div class="stat-val" id="aln-evalue-val" style="color:#7c3aed;">-</div>
+                    <div class="stat-desc">Statistical significance</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ALIGNMENT SNIPPET -->
+            <div style="margin-top: 10px;">
+              <div style="font-size: 12px; font-weight:700; color:#475569; margin-bottom:6px;">
+                Pairwise Alignment Visualization (BLOSUM62 Scoring, Dynamic Programming):
+              </div>
+              <div class="alignment-container" id="alignment-view-container">Loading alignment...</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION B: FUNCTIONAL ANNOTATIONS & GENE ONTOLOGY -->
+        <div class="card" id="function-section">
+          <div class="card-header">
+            <h3>&#128214; 2. Functional Annotations & Gene Ontology (GO)</h3>
+            <span class="badge badge-teal">Biological Evidence</span>
+          </div>
+          <div class="card-body">
+            <div style="background:#eff6ff; border-left:4px solid #3b82f6; padding:16px 20px; border-radius:0 8px 8px 0; margin-bottom:20px; font-size:13px; line-height:1.6;">
+              <strong style="color:#1e3a8a;">Annotated Biological Function:</strong><br>
+              <span id="annotated-function-text">Loading function annotation...</span>
+            </div>
+
+            <div class="grid-features" style="margin-bottom:0;">
+              <div class="feature-card" style="padding:18px;">
+                <h4 style="font-size:13px; font-weight:700; color:#2563eb; margin-bottom:8px;">Molecular Function (GO:MF)</h4>
+                <ul id="go-mf-list" style="padding-left:18px; font-size:12px; color:#334155;">
+                  <li>None annotated</li>
+                </ul>
+              </div>
+              <div class="feature-card" style="padding:18px;">
+                <h4 style="font-size:13px; font-weight:700; color:#059669; margin-bottom:8px;">Biological Process (GO:BP)</h4>
+                <ul id="go-bp-list" style="padding-left:18px; font-size:12px; color:#334155;">
+                  <li>None annotated</li>
+                </ul>
+              </div>
+              <div class="feature-card" style="padding:18px;">
+                <h4 style="font-size:13px; font-weight:700; color:#d97706; margin-bottom:8px;">Cellular Component (GO:CC)</h4>
+                <ul id="go-cc-list" style="padding-left:18px; font-size:12px; color:#334155;">
+                  <li>None annotated</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION C: MACHINE LEARNING FUNCTION & LOCALIZATION PREDICTION -->
+        <div class="card" id="prediction-section">
+          <div class="card-header">
+            <h3>&#129302; 3. Computational AI Function & Localization Predictor</h3>
+            <span class="badge badge-purple">Random Forest ML Models (35 Descriptors)</span>
+          </div>
+          <div class="card-body">
+            <div class="pred-grid">
+              
+              <!-- ENZYME BOX -->
+              <div class="pred-box featured">
+                <div class="pred-tag">Catalytic Function Prediction</div>
+                <div class="pred-result-title" id="pred-enzyme-title">-</div>
+                <div class="confidence-bar-wrap">
+                  <div class="confidence-bar-labels">
+                    <span>Model Confidence</span>
+                    <span id="pred-enzyme-confidence">0%</span>
+                  </div>
+                  <div class="confidence-bar">
+                    <div class="confidence-fill" id="pred-enzyme-bar" style="width: 0%;"></div>
+                  </div>
+                </div>
+                <div style="font-size:12px; color:#64748b;">
+                  Top EC Class: <strong id="pred-top-ec" style="color:#0f172a;">-</strong>
+                </div>
+              </div>
+
+              <!-- LOCALIZATION BOX -->
+              <div class="pred-box featured">
+                <div class="pred-tag">Subcellular Localization</div>
+                <div class="pred-result-title" id="pred-loc-title">-</div>
+                <div class="confidence-bar-wrap">
+                  <div class="confidence-bar-labels">
+                    <span>Targeting Likelihood</span>
+                    <span id="pred-loc-confidence">0%</span>
+                  </div>
+                  <div class="confidence-bar">
+                    <div class="confidence-fill" id="pred-loc-bar" style="width: 0%; background: linear-gradient(90deg, #10b981, #059669);"></div>
+                  </div>
+                </div>
+                <div style="font-size:12px; color:#64748b;" id="pred-loc-desc">-</div>
+              </div>
+
+              <!-- STRUCTURAL MOTIFS BOX -->
+              <div class="pred-box">
+                <div class="pred-tag">Structural Topology Heuristics</div>
+                <div style="font-size:13px; font-weight:700; margin-bottom:4px; color:#0f172a;">Transmembrane Alpha-Helices:</div>
+                <div style="font-size:12px; color:#2563eb; font-weight:600; margin-bottom:10px;" id="pred-tm-count">-</div>
+                <div style="font-size:13px; font-weight:700; margin-bottom:4px; color:#0f172a;">Secretory Signal Peptide:</div>
+                <div style="font-size:12px; color:#059669; font-weight:600;" id="pred-signal-peptide">-</div>
+              </div>
+
+            </div>
+
+            <!-- EXPLANATORY INSIGHTS -->
+            <div style="margin-top: 20px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 18px;">
+              <h4 style="font-size: 13px; font-weight: 700; color: #0f172a; margin-bottom: 8px;">
+                Biological Explanatory Insights & Feature Correlations:
+              </h4>
+              <ul id="pred-insights-list" style="padding-left: 18px; font-size: 12px; color: #475569; line-height: 1.6;">
+                <li>Loading model insights...</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION D: SEQUENCE ANALYSIS CHARTS & COMPOSITION -->
+        <div class="card">
+          <div class="card-header">
+            <h3>&#128202; 4. Calculated Sequence Analysis & Composition Charts</h3>
+            <span class="badge badge-calc">Physicochemical Engine</span>
+          </div>
+          <div class="card-body">
+            
+            <div class="charts-grid">
+              <!-- BAR CHART: 20 AMINO ACID FREQUENCY -->
+              <div class="chart-card">
+                <div class="chart-card-title">Standard 20 Amino Acid Percentage Distribution (%)</div>
+                <div style="height: 280px; position: relative;">
+                  <canvas id="aa-chart-canvas"></canvas>
+                </div>
+              </div>
+
+              <!-- DOUGHNUT CHART: BIOCHEMICAL GROUPS -->
+              <div class="chart-card">
+                <div class="chart-card-title">Biochemical Classification</div>
+                <div style="height: 280px; position: relative;">
+                  <canvas id="biogroup-chart-canvas"></canvas>
+                </div>
+              </div>
+            </div>
+
+            <!-- HYDROPATHY PROFILE LINE CHART -->
+            <div class="chart-card" style="margin-top: 20px;">
+              <div class="chart-card-title">Kyte-Doolittle Sliding Window Hydropathy Profile (N-to-C Terminus)</div>
+              <div style="height: 240px; position: relative;">
+                <canvas id="hydropathy-chart-canvas"></canvas>
+              </div>
+            </div>
+
+            <!-- 20 AMINO ACID COMPOSITION TABLE -->
+            <div style="margin-top: 24px;">
+              <div style="font-size: 13px; font-weight: 700; color: #0f172a; margin-bottom: 10px;">
+                Detailed 20 Standard Amino Acid Composition Table:
+              </div>
+              <div class="data-table-wrap">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>1-Letter</th>
+                      <th>3-Letter</th>
+                      <th>Full Name</th>
+                      <th>Residue Count</th>
+                      <th>Percentage (%)</th>
+                    </tr>
+                  </thead>
+                  <tbody id="aa-table-body">
+                    <!-- Populated dynamically -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- SECTION E: DOMAINS & FUNCTIONAL SITES -->
+        <div class="card" id="domain-section">
+          <div class="card-header">
+            <h3>&#129516; 5. Protein Family, Domains & Functional Sites</h3>
+            <span class="badge badge-teal">InterPro & Pfam Architecture</span>
+          </div>
+          <div class="card-body">
+            <div class="grid-2-col">
+              <div>
+                <div style="font-size:13px; font-weight:700; margin-bottom:8px; color:#0f172a;">Identified Protein Domains:</div>
+                <div class="data-table-wrap">
+                  <table class="data-table">
+                    <thead>
+                      <tr>
+                        <th>Domain Name</th>
+                        <th>Database Reference</th>
+                        <th>Residue Boundary</th>
+                      </tr>
+                    </thead>
+                    <tbody id="domains-table-body">
+                      <tr><td colspan="3" style="text-align:center; color:#94a3b8; padding:15px;">No domain records available</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div>
+                <div style="font-size:13px; font-weight:700; margin-bottom:8px; color:#0f172a;">Cataloged Functional & Binding Sites:</div>
+                <div id="functional-sites-container" class="sample-list">
+                  <p style="color:#94a3b8; font-size:12px;">No active sites recorded.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION F: 3D MOLECULAR STRUCTURE & ALPHAFOLD VIEWER -->
+        <div class="card">
+          <div class="card-header">
+            <h3>&#128300; 6. 3D Molecular Structure & AlphaFold Viewer</h3>
+            <div style="display:flex; gap:6px;">
+              <button class="btn btn-outline btn-sm" onclick="setViewerStyle('cartoon')">Cartoon</button>
+              <button class="btn btn-outline btn-sm" onclick="setViewerStyle('stick')">Stick</button>
+              <button class="btn btn-outline btn-sm" onclick="setViewerStyle('sphere')">Spheres</button>
+              <button class="btn btn-outline btn-sm" onclick="toggleViewerSpin()">Spin</button>
+              <button class="btn btn-outline btn-sm" onclick="resetViewerView()">Reset</button>
+            </div>
+          </div>
+          <div class="card-body" style="padding: 16px;">
+            <div id="viewer3d-container"></div>
+            <div style="font-size: 11px; color: #64748b; margin-top: 8px; text-align: center;">
+              Interactive WebGL Viewer (3Dmol.js) &bull; Coordinates retrieved from RCSB Protein Data Bank or AlphaFold DB
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- TAB 4: DOCUMENTATION & SCIENCE                 -->
+    <!-- ============================================== -->
+    <section id="docs" class="tab-pane">
+      <div class="card" style="margin-bottom: 24px;">
+        <div class="card-header">
+          <h3>&#128214; Platform Documentation & Scientific Methodology</h3>
+        </div>
+        <div class="card-body" style="line-height: 1.7; font-size: 14px; color: #334155;">
+          
+          <h4 style="font-size: 16px; font-weight: 700; color: #0f172a; margin-bottom: 8px;">1. Project Objectives & Scientific Scope</h4>
+          <p style="margin-bottom: 16px;">
+            This web application is developed as an academic bioinformatic system designed to facilitate comprehensive protein sequence exploration. It integrates established physical-chemical algorithms with curated database annotations from UniProtKB and machine learning models for catalytic and compartmental function inference.
+          </p>
+
+          <h4 style="font-size: 16px; font-weight: 700; color: #0f172a; margin-bottom: 8px;">2. Strict Separation of Biological Data Tiers</h4>
+          <p style="margin-bottom: 8px;">The platform rigorously enforces explicit categorization of all surfaced information:</p>
+          <ul style="padding-left: 24px; margin-bottom: 16px;">
+            <li><strong>Calculated Sequence Characteristics:</strong> Deterministic physical-chemical values derived mathematically from the sequence (Molecular Weight, Isoelectric Point, Instability Index, Aliphatic Index, GRAVY, Chou-Fasman propensities).</li>
+            <li><strong>Retrieved Biological Annotations:</strong> Curated knowledge fetched via official UniProt REST API endpoints, preserving reviewed (Swiss-Prot) vs unreviewed (TrEMBL) status.</li>
+            <li><strong>Sequence-Similarity Findings:</strong> Derived from pairwise BLOSUM62 dynamic programming alignment, reporting actual Identity %, Coverage %, and Karlin-Altschul E-values.</li>
+            <li><strong>Computational AI Predictions:</strong> Inferred via feature-engineered Random Forest models trained on curated Swiss-Prot benchmark datasets.</li>
+            <li><strong>Negative or Inconclusive Results:</strong> When a sequence does not yield a match, the system explicitly reports "No identical match found" without fabricating values.</li>
+          </ul>
+
+          <h4 style="font-size: 16px; font-weight: 700; color: #0f172a; margin-bottom: 8px;">3. Mathematical Algorithms & Peer-Reviewed References</h4>
+          <ul style="padding-left: 24px; margin-bottom: 16px;">
+            <li><strong>Theoretical Isoelectric Point (pI):</strong> Computed using iterative bisection root-finding on Lehninger / Bjellqvist dissociation constant (pKa) equations across 9 ionizable groups.</li>
+            <li><strong>Instability Index (II):</strong> Guruprasad, Reddy, & Pandit (1990). Evaluates in vitro protein stability based on a 400 dipeptide instability weight matrix (DIWV). Score &lt; 40 denotes stable (half-life &gt; 16h); score &ge; 40 denotes unstable (half-life &lt; 5h).</li>
+            <li><strong>Aliphatic Index (AI):</strong> Ikai (1980). Relative volume occupied by aliphatic side chains (Ala, Val, Ile, Leu), correlating with thermal stability.</li>
+            <li><strong>GRAVY (Hydropathicity):</strong> Kyte & Doolittle (1982). Moving window hydropathy averaging. Positive values indicate hydrophobic nature; negative values indicate hydrophilic nature.</li>
+            <li><strong>Molar Extinction Coefficient:</strong> Gill & von Hippel (1989); Pace et al. (1995). Based on light absorption at 280 nm by Tryptophan, Tyrosine, and Cystine disulfide pairs.</li>
+          </ul>
+
+          <h4 style="font-size: 16px; font-weight: 700; color: #b45309; margin-bottom: 8px;">4. Academic Integrity & Scientific Limitations</h4>
+          <div class="disclaimer-box" style="margin-top: 8px;">
+            <p>
+              In accordance with scientific publishing and academic research standards, computational predictions generated by this platform are intended for preliminary hypothesis generation. Computational models are trained on representative benchmark protein families and do not replace wet-lab biochemical validation (e.g., enzyme kinetics assays, mass spectrometry, circular dichroism, or X-ray crystallography).
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- LOADING MODAL OVERLAY -->
+  <div id="loading-modal" class="loading-overlay">
+    <div class="loading-modal">
+      <div class="spinner"></div>
+      <div class="loading-title">Analyzing Protein Sequence</div>
+      <div class="loading-status" id="loading-status-text">Validating biological input...</div>
+      <div class="loading-progress-bar">
+        <div class="loading-progress-fill" id="loading-progress-fill"></div>
+      </div>
+      <p style="font-size: 11px; color: #94a3b8;">
+        Running in silico calculations, UniProtKB queries, and machine learning predictors...
+      </p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div style="max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+      <div>
+        <strong>AI-Based Protein Function Prediction & Analysis Platform</strong> &bull; Academic Bioinformatics Prototype
+      </div>
+      <div style="color: #94a3b8;">
+        Data Sources: UniProtKB &bull; NCBI Entrez &bull; InterPro &bull; RCSB PDB &bull; AlphaFold DB
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/static/js/charts.js"></script>
+  <script src="/static/js/viewer3d.js"></script>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
